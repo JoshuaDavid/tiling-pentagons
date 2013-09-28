@@ -1,12 +1,5 @@
 (function() {
-    var canvas = document.getElementById("pentagons");
-    var context = canvas.getContext('2d');
-
-    canvas.height = canvas.style.height = 1000;
-    canvas.width = canvas.style.width = 1000;
-
-    context.lineWidth = 0.1;
-
+    var canvas, context;
     function drawPentagon(points) {
         context.beginPath();
         context.moveTo(points[0].x, points[0].y);
@@ -115,6 +108,13 @@
     }
 
     window.addEventListener('load', function() {
+        canvas = document.getElementById("pentagons");
+        context = canvas.getContext('2d');
+
+        canvas.height = canvas.style.height = 1000;
+        canvas.width = canvas.style.width = 1000;
+
+        context.lineWidth = 0.1;
         draw_r(getFirstPentagon(), 7);
     });
 })()
